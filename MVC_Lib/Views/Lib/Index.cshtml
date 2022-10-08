@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MVC_Lib.Models.LibMember>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Member_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Member_Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Member_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "AddOrderDetails", new { id=item.Member_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Member_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Member_Id })
+        </td>
+    </tr>
+
+
+}
+
+
+</table>
+
+<table class="table table-bordered">
+    <tr>
+        <th>MemberId</th>
+        <th>Membername</th>
+
+    </tr>
+    @foreach (var item in @ViewBag.customers)
+    {
+        <tr>
+
+            <td>@item.Member_Id</td>
+            <td>@item.Member_Name</td>
+
+
+        </tr>
+    }
+

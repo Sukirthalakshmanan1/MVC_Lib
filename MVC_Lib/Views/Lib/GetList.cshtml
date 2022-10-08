@@ -1,0 +1,34 @@
+﻿@using MVC_Lib.Models
+@{
+    ViewBag.Title = "GetList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetList</h2>
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Issueid</th>
+        <th>Memberid</th>
+        <th>Issuedate</th>
+        <th>Returndate</th>
+
+    </tr>
+   
+    @foreach (IssueBook item in (List<IssueBook>)TempData["mybag"])
+    {
+        <tr>
+
+            <td>@item.Issue_Id</td>
+            <td>@item.Member_Id</td>
+            <td>@item.Issuedate</td>
+            <td>@item.returndate</td>
+
+        </tr>
+    }
+
+
+
+</table>

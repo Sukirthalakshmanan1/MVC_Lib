@@ -1,0 +1,33 @@
+﻿@using MVC_Lib.Models
+@{
+    ViewBag.Title = "Index1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Books List</h2>
+
+
+
+
+<hr />
+<table class="table table-bordered">
+    <tr>
+        <th>BookId</th>
+        <th>Bookname</th>
+        <th>Cost</th>
+
+    </tr>
+    @foreach (Book item in (List<Book>)@ViewData["mycustList"])
+    {
+
+        <tr>
+
+            <td>@item.Book_Id</td>
+            <td>@item.Book_Name</td>
+            <td>@item.Cost</td>
+
+
+
+        </tr>
+    }
+</table>
